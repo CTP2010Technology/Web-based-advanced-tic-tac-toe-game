@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Advanced Version</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Tic Tac Toe - Advanced Version</h1>
+        <nav>
+            <button id="startNewGame">Start New Game</button>
+            <button id="resetStats">Reset Stats</button>
+            <button id="toggleRules">Game Rules</button>
+            <button id="toggleSettings">Settings</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gameBoard">
+            <!-- Game cells will be dynamically created by JavaScript -->
+        </section>
+
+        <section id="gameInfo">
+            <h2>Game Information</h2>
+            <div id="currentTurn">Current Turn: Player X</div>
+            <div id="turnCount">Turn Count: 0</div>
+            <div id="scoreboard">
+                <p>Player X: <span id="xScore">0</span></p>
+                <p>Player O: <span id="oScore">0</span></p>
+                <p>Ties: <span id="tieScore">0</span></p>
+            </div>
+        </section>
+
+        <section class="game-settings">
+            <h2>Game Settings</h2>
+            <form id="settingsForm">
+                <label for="difficulty">Select Difficulty:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <button type="submit" id="applySettings">Apply Settings</button>
+            </form>
+        </section>
+
+        <section class="controls">
+            <h2>Player Names</h2>
+            <input type="text" id="playerNameX" placeholder="Player X Name">
+            <input type="text" id="playerNameO" placeholder="Player O Name">
+            <button id="updateNames">Update Names</button>
+        </section>
+    </main>
+
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Game Over</h2>
+            <p id="resultMessage"></p>
+            <button id="playAgain">Play Again</button>
+        </div>
+    </div>
+
+    <div id="rulesModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Game Rules</h2>
+            <p>Tic-Tac-Toe is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.</p>
+            <ul>
+                <li>X always goes first.</li>
+                <li>Players cannot play on a played position.</li>
+                <li>Players alternate placing X's and O's on the board until either:
+                    <ul>
+                        <li>One player has three in a row, horizontally, vertically or diagonally</li>
+                        <li>All nine squares are filled.</li>
+                    </ul>
+                </li>
+                <li>If a player is able to draw three X's or three O's in a row, that player wins.</li>
+                <li>If all nine squares are filled and neither player has three in a row, the game is a draw.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tic Tac Toe Game. All rights reserved.</p>
+    </footer>
+</body>
+</html>
